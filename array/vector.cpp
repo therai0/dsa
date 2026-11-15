@@ -3,8 +3,17 @@
 
 using namespace std;
 
-void singleNumber() {
-    
+int singleNumber(vector<int>num) {
+    if(num.size() == 1) {
+        return num[0];
+    }
+
+    int ans = num[0];
+    for(int i = 1; i < num.size();i++) {
+        ans = ans^num[i];
+    }
+
+    return ans;
 }
 
 int main()
@@ -49,5 +58,10 @@ int main()
     // cout << "At back:" << v.back() << endl;
 
     // cout << "At 0th position:" << v.at(0);
+
+
+    vector<int> v = {1,1,23,4,54,54,4,23,24};
+    int ans  = singleNumber(v);
+    cout << "Ans:" << ans ;
     return 0;
 }

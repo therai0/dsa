@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 void reverseArray(int a[],int size) {
 
     int i = 0;

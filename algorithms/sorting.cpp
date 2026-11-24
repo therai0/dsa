@@ -1,61 +1,73 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
-void bubbleSort(vector<int> vec) {
+void bubbleSort(vector<int> vec)
+{
 
-    for(int i = 0; i < vec.size()-1; i++) {
-        for(int j = 0; j < vec.size() - i - 1; j++ ) {
-            if(vec[j] > vec[j+1]) {
-                swap(vec[j],vec[j+1]);
+    for (int i = 0; i < vec.size() - 1; i++)
+    {
+        for (int j = 0; j < vec.size() - i - 1; j++)
+        {
+            if (vec[j] > vec[j + 1])
+            {
+                swap(vec[j], vec[j + 1]);
             }
         }
     }
 
-    for(int i = 0 ;  i < vec.size(); i++) {
+    for (int i = 0; i < vec.size(); i++)
+    {
         cout << vec[i] << " ";
     }
-
-
 }
 
-void insertionSort(vector<int> vec){
-    for(int i = 0 ; i < vec.size();i++){
+void insertionSort(vector<int> vec)
+{
+    for (int i = 1; i < vec.size(); i++)
+    {
         int key = vec[i];
-        int j = i -1;
-        while(j >=0  && vec[j] > key) {
-            vec[j+1] = vec[j];
+        int j = i - 1;
+        while (j >= 0 && vec[j] > key)
+        {
+            vec[j + 1] = vec[j];
             j--;
         }
-        vec[j+1] = key;
+        vec[j + 1] = key;
     }
 
-    for(int i = 0; i < vec.size(); i++) {
+    for (int i = 0; i < vec.size(); i++)
+    {
         cout << vec[i] << " ";
     }
 }
 
-void selectionSort(vector<int>vec) {
+void selectionSort(vector<int> vec)
+{
     int n = vec.size();
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         int m = i;
-        for(int j = i+1; j < n; j++) {
-            if(vec[j] < vec[m]) {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (vec[j] > vec[m])
+            {
                 m = j;
             }
         }
-        swap(vec[i],vec[m]);
+        swap(vec[i], vec[m]);
     }
 
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         cout << vec[i] << " ";
     }
-
 }
 
-int main() {
-    vector<int> v = {12,3,54,6};
+int main()
+{
+    vector<int> v = {12, 3, 54, 6};
     // bubbleSort(v);
     // insertionSort();
     selectionSort(v);

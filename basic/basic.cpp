@@ -151,6 +151,6 @@ int main()
     // pyramid();
     // reversePymarid();
     // dimond();
-    alphabetTriangle();
+    // alphabetTriangle();
     return 0;
 }
